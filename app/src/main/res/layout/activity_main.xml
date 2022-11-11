@@ -28,7 +28,8 @@
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintEnd_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <TextView
                 android:id="@+id/textView2"
@@ -38,6 +39,7 @@
                 android:fontFamily="@font/elsie_swash_caps_black"
                 android:text="Explore"
                 android:textSize="28sp"
+                android:paddingTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:padding="5dp"
+                android:paddingTop="10dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
