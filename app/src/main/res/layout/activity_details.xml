@@ -61,7 +61,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2
@@ -78,10 +77,10 @@
         android:id="@+id/next_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/image_btn_bg"
-        android:src="@drawable/next"
-        android:padding="3dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/image_btn_bg"
+        android:padding="3dp"
+        android:src="@drawable/next"
         app:layout_constraintBottom_toBottomOf="@+id/detail_slider_viewpager"
         app:layout_constraintEnd_toEndOf="@+id/detail_slider_viewpager"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
@@ -90,10 +89,10 @@
         android:id="@+id/previous_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/image_btn_bg"
         android:layout_marginStart="16dp"
-        android:src="@drawable/previous"
+        android:background="@drawable/image_btn_bg"
         android:padding="3dp"
+        android:src="@drawable/previous"
         app:layout_constraintBottom_toBottomOf="@+id/detail_slider_viewpager"
         app:layout_constraintStart_toStartOf="@+id/detail_slider_viewpager"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
@@ -146,5 +145,116 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/detail_slider_viewpager">
+
+        <TextView
+            android:id="@+id/population"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Population: 77,350"/>
+        <TextView
+            android:id="@+id/region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Region: Europe"/>
+        <TextView
+            android:id="@+id/capital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Capital: Andorra la Vella"/>
+        <TextView
+            android:id="@+id/motto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Motto: 77,350"/>
+
+        <TextView
+            android:id="@+id/ethnic_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:text="Official language: 77,350"/>
+        <TextView
+            android:id="@+id/language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Ethnic group: 77,350"/>
+        <TextView
+            android:id="@+id/religion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Religion: 77,350"/>
+        <TextView
+            android:id="@+id/govt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Government: 77,350"/>
+        <TextView
+            android:id="@+id/independence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:text="Independence: 77,350"/>
+        <TextView
+            android:id="@+id/area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Area: 77,350"/>
+        <TextView
+            android:id="@+id/currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Currency: 77,350"/>
+        <TextView
+            android:id="@+id/gdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="GDP: 77,350"/>
+        <TextView
+            android:id="@+id/timezone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:text="Time Zone: 77,350"/>
+        <TextView
+            android:id="@+id/date_format"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Date Format: 77,350"/>
+        <TextView
+            android:id="@+id/dialing_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Independence: +376"/>
+        <TextView
+            android:id="@+id/driving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Driving Side: Right"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

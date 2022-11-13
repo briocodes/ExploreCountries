@@ -1,10 +1,11 @@
-package com.briocodes.explorecountries
+package com.briocodes.explorecountries.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.briocodes.explorecountries.R
 
 
 class ViewPagerAdapter(private val images:List<Int>):RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder>(){
@@ -16,12 +17,12 @@ class ViewPagerAdapter(private val images:List<Int>):RecyclerView.Adapter<ViewPa
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ViewPagerAdapter.ViewPagerViewHolder {
+    ): ViewPagerViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.slider_item,parent,false)
         return ViewPagerViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewPagerAdapter.ViewPagerViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {
         val currentImage=images[position]
         holder.imageView.setImageResource(currentImage)
     }

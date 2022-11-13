@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.viewpager2.widget.ViewPager2
+import com.briocodes.explorecountries.adapters.ViewPagerAdapter
 
 class DetailsActivity : AppCompatActivity() {
     private lateinit var dotIndicator1:ImageView

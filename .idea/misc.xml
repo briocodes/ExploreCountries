@@ -11,11 +11,12 @@
         <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/drawable/light_mode.xml" value="0.1435" />
         <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/drawable/navigate_up_icon.xml" value="0.1435" />
         <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/drawable/search_bar_bg.xml" value="0.204" />
+        <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/drawable/view_bg.xml" value="0.1435" />
         <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/layout/activity_details.xml" value="0.25" />
         <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/layout/bottom_filter_layout.xml" value="0.19635416666666666" />
-        <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.25" />
-        <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/layout/country_item.xml" value="0.19635416666666666" />
+        <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.2" />
+        <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/layout/country_item.xml" value="0.33" />
         <entry key="..\:/Users/BRIGHT/AndroidStudioProjects/ExploreCountries/app/src/main/res/layout/slider_item.xml" value="0.19635416666666666" />
       </map>
     </option>
