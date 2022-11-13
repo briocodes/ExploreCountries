@@ -65,19 +65,16 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/light_mode" />
 
-            <EditText
+            <androidx.appcompat.widget.SearchView
                 android:id="@+id/country_search_et"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:background="@drawable/search_bar_bg"
-                android:drawableLeft="@drawable/search_icon"
                 android:ems="10"
-                android:gravity="center_horizontal"
-                android:hint="Search Country"
+                app:queryHint="Search Country"
                 android:inputType="textShortMessage"
-                android:padding="12dp"
                 android:textColor="?attr/colorSecondary"
-                android:textCursorDrawable="@null"
+                app:iconifiedByDefault="false"
                 app:layout_constraintBottom_toTopOf="@+id/language_btn"
                 app:layout_constraintEnd_toEndOf="@+id/night_mode_toggle"
                 app:layout_constraintStart_toStartOf="@+id/textView2"

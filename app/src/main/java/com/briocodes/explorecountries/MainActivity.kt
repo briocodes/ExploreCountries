@@ -1,6 +1,7 @@
 package com.briocodes.explorecountries
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -11,6 +12,7 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.briocodes.explorecountries.adapters.CountryAdapter
@@ -24,12 +26,24 @@ class MainActivity : AppCompatActivity() {
     lateinit var countryAdapter: CountryAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var recyclerView: RecyclerView
+    lateinit var searchView: SearchView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_main)
         recyclerView = findViewById(R.id.recyclerview)
+        searchView = findViewById(R.id.country_search_et)
+        searchView.clearFocus()
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+        })
 
         linearLayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager=linearLayoutManager
@@ -69,6 +83,23 @@ class MainActivity : AppCompatActivity() {
                 countryAdapter = CountryAdapter(baseContext,sortedResponseBody)
                 countryAdapter.notifyDataSetChanged()
                 recyclerView.adapter=countryAdapter
+                countryAdapter.setOnCountryItemClickedListener(object : CountryAdapter.onCountryItemClickedListener {
+                    override fun onCountryItemClick(position: Int) {
+                        val intent = Intent(this@MainActivity,DetailsActivity::class.java)
+                        intent.putExtra("POPULATION", sortedResponseBody.get(position).population.toString())
+                        intent.putExtra("REGION",sortedResponseBody.get(position).region)
+                        intent.putExtra("DRIVING_SIDE",sortedResponseBody.get(position).car.side)
+                        intent.putExtra("CAPITAL",
+                            sortedResponseBody.get(position).capital?.first().toString())
+                        intent.putExtra("TIMEZONE",sortedResponseBody.get(position).timezones.first().toString())
+                        intent.putExtra("AREA",sortedResponseBody.get(position).area.toString())
+                        intent.putExtra("DIALING_CODE",sortedResponseBody.get(position).idd.root)
+                        intent.putExtra("DIALING_CODE_SUFFIX",sortedResponseBody.get(position).idd.suffixes.first().toString())
+                        intent.putExtra("INDEPENDENCE",sortedResponseBody.get(position).independent.toString())
+                        startActivity(intent)
+
+                    }
+                })
 
             }
 

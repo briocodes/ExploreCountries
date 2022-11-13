@@ -41,7 +41,6 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:textSize="14sp"
-            android:paddingBottom="2dp"
             android:fontFamily="@font/axiforma_bold"
             android:text="Andonna"/>
 
@@ -51,7 +50,6 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:textSize="14sp"
-            android:paddingTop="2dp"
             android:textColor="?attr/colorSecondaryVariant"
             android:fontFamily="@font/axiforma_medium"
             android:text="Andonna la Venna"/>

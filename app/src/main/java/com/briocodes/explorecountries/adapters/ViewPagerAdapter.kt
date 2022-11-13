@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.briocodes.explorecountries.R
+import com.bumptech.glide.Glide
 
 
 class ViewPagerAdapter(private val images:List<Int>):RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder>(){
@@ -30,5 +31,4 @@ class ViewPagerAdapter(private val images:List<Int>):RecyclerView.Adapter<ViewPa
     override fun getItemCount(): Int {
         return images.size
     }
-
 }

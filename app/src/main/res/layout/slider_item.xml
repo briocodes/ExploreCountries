@@ -4,10 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/slider_image"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/ad_flag"
-        android:scaleType="fitXY"/>
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp">
+        <ImageView
+            android:id="@+id/slider_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ad_flag" />
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

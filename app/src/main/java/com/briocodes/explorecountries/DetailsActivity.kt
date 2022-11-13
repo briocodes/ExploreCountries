@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
 import com.briocodes.explorecountries.adapters.ViewPagerAdapter
+import com.bumptech.glide.Glide
 
 class DetailsActivity : AppCompatActivity() {
     private lateinit var dotIndicator1:ImageView
@@ -16,6 +18,14 @@ class DetailsActivity : AppCompatActivity() {
     private lateinit var nextButton: ImageButton
     private lateinit var prevButton: ImageButton
     private lateinit var navigateBackButton: ImageView
+    private lateinit var population: TextView
+    private lateinit var region: TextView
+    private lateinit var drivingSide: TextView
+    private lateinit var capital: TextView
+    private lateinit var timeZone: TextView
+    private lateinit var area: TextView
+    private lateinit var dialingCode:TextView
+    private lateinit var independence: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +38,34 @@ class DetailsActivity : AppCompatActivity() {
         nextButton = findViewById(R.id.next_btn)
         prevButton = findViewById(R.id.previous_btn)
         navigateBackButton = findViewById(R.id.navigate_back_arrow)
+        //Passed data from intent
+        population = findViewById(R.id.population)
+        region = findViewById(R.id.region)
+        drivingSide = findViewById(R.id.driving)
+        capital = findViewById(R.id.capital)
+        timeZone = findViewById(R.id.timezone)
+        area = findViewById(R.id.area)
+        dialingCode = findViewById(R.id.dialing_code)
+        independence = findViewById(R.id.independence)
+
+        val _population = intent.getStringExtra("POPULATION")
+        val _region = intent.getStringExtra("REGION")
+        val _drivingSide = intent.getStringExtra("DRIVING_SIDE")
+        val _capital = intent.getStringExtra("CAPITAL")
+        val _timezone = intent.getStringExtra("TIMEZONE")
+        val _area = intent.getStringExtra("AREA")
+        val _dialingCode = intent.getStringExtra("DIALING_CODE")
+        val _dialingCodeSuffix = intent.getStringExtra("DIALING_CODE_SUFFIX")
+        val _independence = intent.getStringExtra("INDEPENDENCE")
+
+        population.text = _population
+        region.text = _region
+        drivingSide.text = _drivingSide
+        capital.text = _capital
+        timeZone.text = _timezone
+        area.text = _area
+        dialingCode.text = _dialingCode + _dialingCodeSuffix
+        independence.text = _independence
 
         val images= listOf(R.drawable.ad_flag,R.drawable.ad_coat_of_arm,R.drawable.ad_map)
         val adapter = ViewPagerAdapter(images)
