@@ -26,6 +26,13 @@ class DetailsActivity : AppCompatActivity() {
     private lateinit var area: TextView
     private lateinit var dialingCode:TextView
     private lateinit var independence: TextView
+    private lateinit var name: TextView
+    private lateinit var unMember: TextView
+    private lateinit var geoLocation: TextView
+    private lateinit var startOfWeek: TextView
+    private lateinit var status: TextView
+    private lateinit var landlocked: TextView
+    private lateinit var cioc:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +54,13 @@ class DetailsActivity : AppCompatActivity() {
         area = findViewById(R.id.area)
         dialingCode = findViewById(R.id.dialing_code)
         independence = findViewById(R.id.independence)
+        name = findViewById(R.id.name_textView)
+        status = findViewById(R.id.status)
+        startOfWeek = findViewById(R.id.start_of_week)
+        geoLocation = findViewById(R.id.geo_location)
+        unMember = findViewById(R.id.un_member)
+        landlocked = findViewById(R.id.landlocked)
+        cioc = findViewById(R.id.cioc)
 
         val _population = intent.getStringExtra("POPULATION")
         val _region = intent.getStringExtra("REGION")
@@ -57,6 +71,14 @@ class DetailsActivity : AppCompatActivity() {
         val _dialingCode = intent.getStringExtra("DIALING_CODE")
         val _dialingCodeSuffix = intent.getStringExtra("DIALING_CODE_SUFFIX")
         val _independence = intent.getStringExtra("INDEPENDENCE")
+        val _flagUrl = intent.getStringExtra("FLAG_URL")
+        val _name = intent.getStringExtra("NAME")
+        val _status = intent.getStringExtra("STATUS")
+        val _startOfWeek = intent.getStringExtra("START_OF_WEEK")
+        val _geoLocation = intent.getStringExtra("GEO_LOCATION")
+        val _unMember = intent.getStringExtra("UN_MEMBER")
+        val _landlocked = intent.getStringExtra("LANDLOCKED")
+        val _cioc = intent.getStringExtra("CIOC")
 
         population.text = _population
         region.text = _region
@@ -66,6 +88,19 @@ class DetailsActivity : AppCompatActivity() {
         area.text = _area
         dialingCode.text = _dialingCode + _dialingCodeSuffix
         independence.text = _independence
+        name.text = _name
+        status.text = _status
+        startOfWeek.text = _startOfWeek
+        geoLocation.text = _geoLocation
+        unMember.text = _unMember
+        landlocked.text = _landlocked
+        cioc.text = _cioc
+
+        var flagImageView: ImageView? = null
+        if (flagImageView != null) {
+            Glide.with(this).load(_flagUrl).into(flagImageView)
+        }
+
 
         val images= listOf(R.drawable.ad_flag,R.drawable.ad_coat_of_arm,R.drawable.ad_map)
         val adapter = ViewPagerAdapter(images)

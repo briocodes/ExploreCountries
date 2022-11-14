@@ -11,6 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,12 +30,17 @@ class MainActivity : AppCompatActivity() {
     lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var recyclerView: RecyclerView
     lateinit var searchView: SearchView
+    lateinit var progressBar:ProgressBar
+    lateinit var darkLightModeToggle:ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_main)
         recyclerView = findViewById(R.id.recyclerview)
+        darkLightModeToggle = findViewById(R.id.night_mode_toggle)
+        progressBar = findViewById(R.id.progressBar)
+        progressBar.visibility = View.VISIBLE
         searchView = findViewById(R.id.country_search_et)
         searchView.clearFocus()
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -41,8 +49,12 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                TODO("Not yet implemented")
+                return true
             }
+        })
+
+        darkLightModeToggle.setOnClickListener(View.OnClickListener { v ->
+            Toast.makeText(this,"Light mode is activated",Toast.LENGTH_SHORT).show()
         })
 
         linearLayoutManager = LinearLayoutManager(this)
@@ -76,6 +88,7 @@ class MainActivity : AppCompatActivity() {
                 call: Call<List<CountryDataItem>?>,
                 response: Response<List<CountryDataItem>?>
             ) {
+                progressBar.visibility = View.GONE
                 val responseBody = response.body()!!
 
                 val sortedResponseBody = responseBody.sortedBy { it.name.common }
@@ -86,6 +99,7 @@ class MainActivity : AppCompatActivity() {
                 countryAdapter.setOnCountryItemClickedListener(object : CountryAdapter.onCountryItemClickedListener {
                     override fun onCountryItemClick(position: Int) {
                         val intent = Intent(this@MainActivity,DetailsActivity::class.java)
+                        intent.putExtra("NAME",sortedResponseBody.get(position).name.common)
                         intent.putExtra("POPULATION", sortedResponseBody.get(position).population.toString())
                         intent.putExtra("REGION",sortedResponseBody.get(position).region)
                         intent.putExtra("DRIVING_SIDE",sortedResponseBody.get(position).car.side)
@@ -96,6 +110,13 @@ class MainActivity : AppCompatActivity() {
                         intent.putExtra("DIALING_CODE",sortedResponseBody.get(position).idd.root)
                         intent.putExtra("DIALING_CODE_SUFFIX",sortedResponseBody.get(position).idd.suffixes.first().toString())
                         intent.putExtra("INDEPENDENCE",sortedResponseBody.get(position).independent.toString())
+                        intent.putExtra("FLAG_URL",sortedResponseBody.get(position).flags.png)
+                        intent.putExtra("STATUS",sortedResponseBody.get(position).status)
+                        intent.putExtra("START_OF_WEEK", sortedResponseBody.get(position).startOfWeek)
+                        intent.putExtra("GEO_LOCATION",sortedResponseBody.get(position).latlng.first().toString())
+                        intent.putExtra("UN_MEMBER",sortedResponseBody.get(position).unMember.toString())
+                        intent.putExtra("LANDLOCKED",sortedResponseBody.get(position).landlocked.toString())
+                        intent.putExtra("CIOC",sortedResponseBody.get(position).cioc)
                         startActivity(intent)
 
                     }
@@ -104,6 +125,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<CountryDataItem>?>, t: Throwable) {
+                progressBar.visibility = View.GONE
+                Toast.makeText(this@MainActivity,"An error occurred: " + t.message,Toast.LENGTH_SHORT).show()
                 d("MainActivity","onFailure: " + t.message)
             }
         })

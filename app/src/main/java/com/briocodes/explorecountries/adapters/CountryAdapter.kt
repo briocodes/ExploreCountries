@@ -13,7 +13,7 @@ import com.briocodes.explorecountries.dataclass.CountryDataItem
 import com.briocodes.explorecountries.dataclass.subdataclass.Flags
 import com.bumptech.glide.Glide
 
-class CountryAdapter (private val context: Context, private val countryList:List<CountryDataItem>) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>(){
+class CountryAdapter (private val context: Context, private var countryList:List<CountryDataItem>) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>(){
 
     private lateinit var countryListener: onCountryItemClickedListener
 
@@ -24,7 +24,6 @@ class CountryAdapter (private val context: Context, private val countryList:List
     fun setOnCountryItemClickedListener(listener: onCountryItemClickedListener){
         countryListener = listener
     }
-
 
     inner class CountryViewHolder(itemView:View, listener: onCountryItemClickedListener) : RecyclerView.ViewHolder(itemView){
         val coutryName: TextView = itemView.findViewById(R.id.country_name)

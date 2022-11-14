@@ -32,7 +32,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/name_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/axiforma_extra_bold"
@@ -502,8 +502,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="22dp">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -515,6 +514,142 @@
 
                 <TextView
                     android:id="@+id/driving"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not available"
+                    android:fontFamily="@font/axiforma_regular"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingRight="10dp"
+                    android:text="UN Member:"
+                    android:fontFamily="@font/axiforma_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/un_member"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Not available"
+                    android:fontFamily="@font/axiforma_regular"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:text="Status:"
+                    android:fontFamily="@font/axiforma_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not available"
+                    android:fontFamily="@font/axiforma_regular"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:text="Geo-Location:"
+                    android:fontFamily="@font/axiforma_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/geo_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not available"
+                    android:fontFamily="@font/axiforma_regular"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="22dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:text="Start of Week:"
+                    android:fontFamily="@font/axiforma_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/start_of_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not available"
+                    android:fontFamily="@font/axiforma_regular"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:text="Olympic Country Code:"
+                    android:fontFamily="@font/axiforma_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cioc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not available"
+                    android:fontFamily="@font/axiforma_regular"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="22dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:text="Landlocked:"
+                    android:fontFamily="@font/axiforma_bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/landlocked"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Not available"
