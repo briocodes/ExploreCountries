@@ -29,29 +29,19 @@ class MainActivity : AppCompatActivity() {
     lateinit var countryAdapter: CountryAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var recyclerView: RecyclerView
-    lateinit var searchView: SearchView
     lateinit var progressBar:ProgressBar
     lateinit var darkLightModeToggle:ImageView
+    lateinit var countryList: List<CountryDataItem>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_main)
+        countryList = mutableListOf()
         recyclerView = findViewById(R.id.recyclerview)
         darkLightModeToggle = findViewById(R.id.night_mode_toggle)
         progressBar = findViewById(R.id.progressBar)
         progressBar.visibility = View.VISIBLE
-        searchView = findViewById(R.id.country_search_et)
-        searchView.clearFocus()
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                TODO("Not yet implemented")
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return true
-            }
-        })
 
         darkLightModeToggle.setOnClickListener(View.OnClickListener { v ->
             Toast.makeText(this,"Light mode is activated",Toast.LENGTH_SHORT).show()
