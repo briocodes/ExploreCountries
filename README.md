@@ -27,5 +27,5 @@ For the sake of time constraints, I have not been able to implement all the feat
 * The second challenge was that of fetching needed data from the API, loading images using the Glide library, for which I had to brush up my knowledge with various learning resources, and consulting official documentations.
 ### Run the App
 The app has been made available on Appetize.io to make it possible for you to demo the app on your web browser with just a click. To run the app, click on the link below.
-* <a href="https://appetize.io/app/zfufkbxe5hnkubnntou3wqysgi">RUN APP DEMO NOW</a>
+* <a href="https://appetize.io/app/uunrogbdjkg7sdgcfdwj226m7e">RUN APP DEMO NOW</a>
 * OR <a href="https://drive.google.com/file/d/1Pdx3a86owNudf2J-8Y4Zl7W6X5xouxWV/view?usp=sharing">Download APK</a>
