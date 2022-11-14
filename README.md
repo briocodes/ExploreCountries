@@ -15,8 +15,8 @@ The data fetched in the app, including the list of all the countries and the det
 ### Wishlist Features
 For the sake of time constraints, I have not been able to implement all the features I wish to add to this app. If I have more time, I should be able to implement the following features:
 * Filtering of the list of countries by Region, Subregion, Capital, Currency & Language.
-* More responsive search feature
-* Unit & widget tests
+* More responsive search feature.
+* Adding Unit & widget tests.
 ### Libraries
 * <a href="https://square.github.io/retrofit/">RETROFIT</a>: A type-safe HTTP client for making HTTP calls. I used Retrofit for this application as it is quite simple and fast compared to Volley.
 * <a href="https://github.com/google/gson">GSON</a>: Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. This was used to make it easier to For serialize requests and responses.
